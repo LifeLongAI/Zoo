@@ -2,6 +2,9 @@
 #include <string>
 #include <queue>
 #include <fstream>
+#include "Animal.h"
+#include "Avian.h"
+#include "Reptile.h"
 /* run this program using the console pauser or add your own getch, system("pause") or input loop */
 using namespace std;
 
@@ -28,13 +31,14 @@ int main(int argc, char** argv) {
 	}
 	string name;
 	string txtname;
+	do{
 	if (mainMenu() == 1){
 		cout <<"Enter Animal Name: ";
 		cin >>name;
 		txtname = name + ".txt";
 		
 	}
-	else if (mainMenu()0 == 2){
+	else if (mainMenu() == 2){
 		cout <<"Enter 1 for Reptile or 2 for Avian: ";
 		cin >>choice;
 		if(choice == 1){
@@ -44,7 +48,21 @@ int main(int argc, char** argv) {
 			class Avian a1;
 		}
 	}
-	
+	else if (mainMenu() == 3){
+		char answer;
+		do{
+		cout <<Sched.front()
+			 <<"\n Was this Animal fed? Y/N: ";
+		cin >>answer;
+		do{ 
+			Sched.front();
+		}while (answer != 'N');
+		Sched.pop();
+	}while (!Sched.empty())
+	else if (mainMenu() == 4){
+		cout <<"Have a good day.";
+	}
+	}while (mainMenu() != 4);	
 	system("PAUSE");
 	return 0;
 }
