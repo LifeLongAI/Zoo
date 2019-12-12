@@ -1,12 +1,12 @@
 #include <string>
+#include "Animal.h"
 
 #ifndef AVIAN_H
 #define AVIAN_H
 
 using namespace std;
 
-class Avian: public Animal
-{
+class Avian :public Animal{
 public:
     Avian();
 
