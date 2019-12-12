@@ -1,4 +1,5 @@
 #include <string>
+#include "Animal.h"
 
 #ifndef REPTILE_H
 #define REPTILE_H
@@ -19,8 +20,8 @@ public:
     string print();
 
 private:
-    bool hasLegs;
-    bool isVenomous;
+    bool legs;
+    bool venomous;
 };
 
 #endif // REPTILE_H
