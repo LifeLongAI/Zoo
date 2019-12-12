@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1576186815 source:c:\users\andy\documents\github\zoo\animal.cpp
+	<iostream>
+
+1576186815 source:c:\users\andy\documents\github\zoo\avian.cpp
+	<iostream>
+
+1576186815 source:c:\users\andy\documents\github\zoo\main.cpp
+	<iostream>
+
+1576186815 source:c:\users\andy\documents\github\zoo\reptile.cpp
+	<iostream>
+
