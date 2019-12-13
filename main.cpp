@@ -126,7 +126,9 @@ int main(int argc, char** argv)
             }
 
             ofstream saveFile(newAnim->getName()+".txt");
-            saveFile<<newAnim->print();
+            cout<<"Saving animal to database\n";
+            cout<<newAnim->print();
+            saveFile<<(newAnim->print());
         }
         else if (entry == 3)
         {
