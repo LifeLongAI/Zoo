@@ -111,8 +111,6 @@ int main(int argc, char** argv)
         }
         else if (entry == 2)
         {
-            cout <<"Enter 1 for Reptile or 2 for Avian: ";
-            cin >>choice;
             Animal* newAnim;
             cout <<"Enter 1 for Reptile or 2 for Avian: ";
             cin >>choice;
