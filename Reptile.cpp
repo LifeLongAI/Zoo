@@ -1,6 +1,10 @@
 #include "Reptile.h"
 
-Reptile::Reptile(){}
+Reptile::Reptile():Animal()
+{
+    legs = false;
+    venomous = false;
+}
 
 Reptile::Reptile(Animal fred)
 {

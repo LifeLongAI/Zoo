@@ -1,6 +1,12 @@
 #include "Animal.h"
 
-Animal::Animal(){}
+Animal::Animal()
+{
+    name = "name";
+    food = "food";
+    sex = 's';
+    weight = 0;
+}
 
 string Animal::getFood()
 {
