@@ -1,6 +1,10 @@
 #include "Avian.h"
 
-Avian::Avian(){}
+Avian::Avian():Animal()
+{
+    beakLength = 0;
+    wingspan = 0;
+}
 
 Avian::Avian(Animal fred)
 {
