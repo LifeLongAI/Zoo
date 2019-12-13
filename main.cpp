@@ -118,18 +118,20 @@ int main(int argc, char** argv)
             {
                 Reptile rexxar = makeRep();
                 newAnim = &rexxar;
+                cout<<newAnim->print();
             }
             else if (choice == 2)
             {
                 Avian borb = makeBirb();
                 newAnim = &borb;
+                cout<<newAnim->print();
             }
 
             ofstream saveFile;
             saveFile.open(newAnim->getName()+".txt");
             cout<<"Saving animal to database\n";
             cout<<newAnim->print();
-            saveFile<<(newAnim->print());
+            saveFile<<newAnim-> print();
             saveFile.close();
         }
         else if (entry == 3)
