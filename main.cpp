@@ -106,13 +106,81 @@ int main(int argc, char** argv)
         entry = mainMenu();
         if (entry == 1)
         {
+            Animal oldAnim = Animal();
+            Animal* animPtr;
+            Reptile grommash;
+            Avian kite;
+            string type;
+
             cout <<"Enter Animal Name: ";
             cin >>name;
             txtname = name + ".txt";
 
             ifstream animFile;
             animFile.open(txtname);
+            getline(animFile, type);
+
             getline(animFile, line);
+            oldAnim.setName(line);
+            getline(animFile, line);
+            oldAnim.setWeight(stof(line));
+            getline(animFile, line);
+            oldAnim.setSex((line.at(0)));
+            getline(animFile, line);
+            oldAnim.setFood(line);
+
+            if(type == "Reptile")
+            {
+                grommash = Reptile(oldAnim);
+                getline(animFile, line);
+                grommash.setLegs(stoi(line)==1);
+                getline(animFile, line);
+                grommash.setVenomous(stoi(line)==1);
+
+                animPtr = &grommash;
+            }
+            else if (type == "Avian")
+            {
+                kite = Avian(oldAnim);
+                getline(animFile, line);
+                kite.setWingspan(stof(line));
+                getline(animFile, line);
+                kite.setBeakLength(stof(line));
+
+                animPtr = &kite;
+            }
+
+            animFile.close();
+            cout<<"You have selected:\n"<<animPtr->print()<<endl<<endl;
+            char isHungry;
+            cout<<"Is "<<animPtr->getName()<<" hungry? (y/n)\n";
+            cin>>isHungry;
+            if(isHungry == 'y')
+            {
+                Sched.push(animPtr->getName());
+                cout<<animPtr->getName()<<" added to feeding queue.";
+
+                ofstream sked;
+                sked.open("Schedule.txt");
+                sked<<animPtr->getName();
+                sked.close();
+            }
+
+            cout<<"\n\n"<<animPtr->getName()<<" currently weighs "<<animPtr->getWeight()<<" lbs."
+            <<endl<<"Would you like to change "<<animPtr->getName()<<"'s weight? (y/n)\n";
+            char editWeight;
+            cin>>editWeight;
+            if(editWeight == 'y')
+            {
+                cout<<"Enter "<<animPtr->getName()<<"'s new weight\n";
+                float newWeight;
+                cin>>newWeight;
+                animPtr->setWeight(newWeight);
+
+                ofstream overwrite;
+                overwrite.open(txtname);
+                overwrite<<(animPtr->print());
+            }
 
         }
         else if (entry == 2)
@@ -144,7 +212,7 @@ int main(int argc, char** argv)
             char answer;
             if (!Sched.empty())
             {
-                for (int i = 0; i <= Sched.size(); i++)
+                while(!Sched.empty())
                 {
                     cout <<Sched.front()
                          <<"\nWas this Animal fed? Y/N: ";
@@ -152,8 +220,8 @@ int main(int argc, char** argv)
                     answer = toupper(answer);
                     if (answer == 'Y')
                     {
-                        Sched.pop();                        	
-						}
+                        Sched.pop();
+
                     }
                     else if (answer == 'N')
                     {
@@ -161,9 +229,9 @@ int main(int argc, char** argv)
                     }
                 }
             }
-            ofstream delfile
+            ofstream delfile;
             delfile.open("Schedule.txt");
-            delfile <<"";
+            delfile.clear();
             file.close();
         }
         else if (entry == 4)
