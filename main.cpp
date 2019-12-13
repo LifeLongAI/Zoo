@@ -98,6 +98,7 @@ int main(int argc, char** argv)
         getline(file,line);
         Sched.push(line);
     }
+    file.close();
     string name;
     string txtname;
     do
@@ -149,7 +150,8 @@ int main(int argc, char** argv)
                     answer = toupper(answer);
                     if (answer == 'Y')
                     {
-                        Sched.pop();
+                        Sched.pop();                        	
+						}
                     }
                     else if (answer == 'N')
                     {
@@ -157,6 +159,10 @@ int main(int argc, char** argv)
                     }
                 }
             }
+            ofstream delfile
+            delfile.open("Schedule.txt");
+            delfile <<"";
+            file.close();
         }
         else if (entry == 4)
         {
