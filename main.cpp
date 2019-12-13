@@ -121,11 +121,13 @@ int main(int argc, char** argv)
             {
                 rexxar = makeRep();
                 newAnim = &rexxar;
+                cout<<newAnim->print();
             }
             else if (choice == 2)
             {
                 borb = makeBirb();
                 newAnim = &borb;
+                cout<<newAnim->print();
             }
 
             ofstream saveFile;
