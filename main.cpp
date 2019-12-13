@@ -109,6 +109,10 @@ int main(int argc, char** argv)
             cin >>name;
             txtname = name + ".txt";
 
+            ifstream animFile;
+            animFile.open(txtname);
+            getline(animFile, line);
+
         }
         else if (entry == 2)
         {
@@ -121,13 +125,11 @@ int main(int argc, char** argv)
             {
                 rexxar = makeRep();
                 newAnim = &rexxar;
-                cout<<newAnim->print();
             }
             else if (choice == 2)
             {
                 borb = makeBirb();
                 newAnim = &borb;
-                cout<<newAnim->print();
             }
 
             ofstream saveFile;
