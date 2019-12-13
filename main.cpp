@@ -5,7 +5,7 @@
 #include "Animal.h"
 #include "Avian.h"
 #include "Reptile.h"
-/* run this program using the console pauser or add your own getch, system("pause") or input loop */
+
 using namespace std;
 
 int mainMenu(){
@@ -37,7 +37,7 @@ int main(int argc, char** argv) {
 		cout <<"Enter Animal Name: ";
 		cin >>name;
 		txtname = name + ".txt";
-		
+
 	}
 	else if (entry == 2){
 		cout <<"Enter 1 for Reptile or 2 for Avian: ";
@@ -65,7 +65,7 @@ int main(int argc, char** argv) {
 		}
 		}
 		}
-	}	
+	}
 	else if (entry == 4){
 		cout <<"Have a good day.";
 		break;
