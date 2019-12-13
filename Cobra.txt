@@ -1,6 +1,6 @@
 Reptile
 Cobra
-15.000000
+70.000000
 m
 mice
 0
