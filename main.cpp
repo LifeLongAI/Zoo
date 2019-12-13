@@ -111,7 +111,7 @@ int main(int argc, char** argv)
         }
         else if (entry == 2)
         {
-            Animal* newAnim;
+            Animal* newAnim = new Animal();
             cout <<"Enter 1 for Reptile or 2 for Avian: ";
             cin >>choice;
             if(choice == 1)
@@ -125,10 +125,12 @@ int main(int argc, char** argv)
                 newAnim = &borb;
             }
 
-            ofstream saveFile(newAnim->getName()+".txt");
+            ofstream saveFile;
+            saveFile.open(newAnim->getName()+".txt");
             cout<<"Saving animal to database\n";
             cout<<newAnim->print();
             saveFile<<(newAnim->print());
+            saveFile.close();
         }
         else if (entry == 3)
         {
