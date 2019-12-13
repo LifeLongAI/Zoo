@@ -236,7 +236,7 @@ int main(int argc, char** argv)
         }
         else if (entry == 4)
         {
-            cout <<"Have a good day.";
+            cout <<"Have a good day. \n";
             break;
         }
     }
