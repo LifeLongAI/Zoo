@@ -58,12 +58,13 @@ int main(int argc, char** argv) {
 			Sched.front();
 		}while (answer != 'N');
 		Sched.pop();
-	}while (!Sched.empty())
+	}while (!Sched.empty());
+	}
 	else if (mainMenu() == 4){
 		cout <<"Have a good day.";
 	}
 	}while (mainMenu() != 4);
-	}
 	system("PAUSE");
 	return 0;
+
 }
