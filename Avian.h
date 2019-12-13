@@ -9,6 +9,7 @@ using namespace std;
 class Avian :public Animal{
 public:
     Avian();
+    Avian(Animal);
 
     void setWingspan(float);
     void setBeakLength(float);

@@ -2,6 +2,14 @@
 
 Reptile::Reptile(){}
 
+Reptile::Reptile(Animal fred)
+{
+    setFood(fred.getFood());
+    setName(fred.getName());
+    setWeight(fred.getWeight());
+    setSex(fred.getSex());
+}
+
 bool Reptile::hasLegs()
 {
     return legs;

@@ -2,6 +2,14 @@
 
 Avian::Avian(){}
 
+Avian::Avian(Animal fred)
+{
+    setFood(fred.getFood());
+    setName(fred.getName());
+    setWeight(fred.getWeight());
+    setSex(fred.getSex());
+}
+
 float Avian::getBeakLength()
 {
     return beakLength;

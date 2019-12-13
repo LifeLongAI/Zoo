@@ -10,6 +10,7 @@ class Reptile: public Animal
 {
 public:
     Reptile();
+    Reptile(Animal);
 
     void setLegs(bool);
     void setVenomous(bool);
