@@ -15,7 +15,8 @@ int mainMenu()
          <<"=====================\n"
          <<"1. Animal Information\n"
          <<"2. Add An Animal     \n"
-         <<"3. Feeding Schedule  \n";
+         <<"3. Feeding Schedule  \n"
+         <<"4. Exit Program      \n";
     cin >>choice;
     return choice;
 }
@@ -111,24 +112,25 @@ int main(int argc, char** argv)
         }
         else if (entry == 2)
         {
-            Animal* newAnim = new Animal();
+            Animal* newAnim;
+            Reptile rexxar;
+            Avian borb;
             cout <<"Enter 1 for Reptile or 2 for Avian: ";
             cin >>choice;
             if(choice == 1)
             {
-                Reptile rexxar = makeRep();
+                rexxar = makeRep();
                 newAnim = &rexxar;
             }
             else if (choice == 2)
             {
-                Avian borb = makeBirb();
+                borb = makeBirb();
                 newAnim = &borb;
             }
 
             ofstream saveFile;
             saveFile.open(newAnim->getName()+".txt");
             cout<<"Saving animal to database\n";
-            cout<<newAnim->print();
             saveFile<<(newAnim->print());
             saveFile.close();
         }
